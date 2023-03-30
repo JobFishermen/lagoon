@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, Container, Button} from '@mui/material';
+import { Typography, Container, Button, Modal, Box} from '@mui/material';
 import CalculatorInput, { CalculationDetails } from './CalculatorInput';
 import CalculatorGraph from './CalculatorGraph';
 import CalculatorItems from './CalculatorItems';
@@ -27,10 +27,24 @@ const Calculator = () => {
                 newItems.push(element)
             }
         }
-
         setItems(newItems)
     }
 
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    const style = {
+        position: 'absolute' as 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+      };
     return (
         <Container style={{
             borderRadius: '5px',
@@ -41,7 +55,23 @@ const Calculator = () => {
                 <CalculatorInput onSelect={handleSelect} />
                 <CalculatorItems items={items} onDelete={handleDelete} onUpdate={handleUpdate}></CalculatorItems>
                 <CalculatorGraph items={items}></CalculatorGraph>
-                <Button variant="contained" color="primary" sx={{ marginTop: '1rem' }}>Contact Us</Button>
+                <Button variant="contained" color="primary" sx={{ marginTop: '1rem' }} onClick={handleOpen}>Contact Us</Button>
+                
+
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description">
+                        <Box sx={style}>
+                            <Typography id="modal-modal-title" variant="h6" component="h2">
+                                Contact Us
+                            </Typography>
+                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                context
+                            </Typography>
+                        </Box>
+                </Modal>
             </Container>
         </Container>
     );
