@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, Container, } from '@mui/material';
+import { Typography, Container, Button} from '@mui/material';
 import CalculatorInput, { CalculationDetails } from './CalculatorInput';
 import CalculatorGraph from './CalculatorGraph';
 import CalculatorItems from './CalculatorItems';
@@ -41,6 +41,7 @@ const Calculator = () => {
                 <CalculatorInput onSelect={handleSelect} />
                 <CalculatorItems items={items} onDelete={handleDelete} onUpdate={handleUpdate}></CalculatorItems>
                 <CalculatorGraph items={items}></CalculatorGraph>
+                <Button variant="contained" color="primary" sx={{ marginTop: '1rem' }}>Contact Us</Button>
             </Container>
         </Container>
     );
