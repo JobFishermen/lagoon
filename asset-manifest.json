@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lagoon/static/css/main.23d3114d.css",
+    "main.js": "/lagoon/static/js/main.fba12ff7.js",
+    "static/js/787.5a567731.chunk.js": "/lagoon/static/js/787.5a567731.chunk.js",
+    "index.html": "/lagoon/index.html",
+    "main.23d3114d.css.map": "/lagoon/static/css/main.23d3114d.css.map",
+    "main.fba12ff7.js.map": "/lagoon/static/js/main.fba12ff7.js.map",
+    "787.5a567731.chunk.js.map": "/lagoon/static/js/787.5a567731.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23d3114d.css",
+    "static/js/main.fba12ff7.js"
+  ]
+}
